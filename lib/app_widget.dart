@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes/create_note_page.dart';
 import 'package:notes/home_page.dart';
 
 class AppWidget extends StatelessWidget {
@@ -10,7 +11,7 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: CreateNotePage(),
     );
   }
 }
