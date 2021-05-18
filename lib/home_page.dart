@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:notes/create_note_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -34,7 +33,17 @@ class _HomePageState extends State<HomePage> {
           return Card(
             child: ListTile(
               title: Text(_notes[index]),
-              onTap: () {},
+              onTap: () async {
+                var _newNote = await Navigator.pushNamed(
+                  context,
+                  '/create-note',
+                  arguments: _notes[index],
+                );
+                if (_newNote != null) {
+                  _notes[index] = _newNote as String;
+                  setState(() {});
+                }
+              },
             ),
           );
         },
