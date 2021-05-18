@@ -20,14 +20,9 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          var _newNote = await Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => CreateNotePage(),
-            ),
-          );
+          var _newNote = await Navigator.pushNamed(context, '/create-note');
           if (_newNote != null) {
-            _notes.add(_newNote);
+            _notes.add(_newNote as String);
             setState(() {});
           }
         },

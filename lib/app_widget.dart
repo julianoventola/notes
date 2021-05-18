@@ -11,7 +11,11 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      routes: {
+        '/home': (context) => HomePage(),
+        '/create-note': (context) => CreateNotePage(),
+      },
+      initialRoute: '/home',
     );
   }
 }
