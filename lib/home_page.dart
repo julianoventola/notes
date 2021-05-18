@@ -9,7 +9,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var notes = <String>[];
+  var _notes = <String>[];
 
   @override
   Widget build(BuildContext context) {
@@ -19,22 +19,27 @@ class _HomePageState extends State<HomePage> {
         title: Text('NOTES'),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
+        onPressed: () async {
+          var _newNote = await Navigator.push(
             context,
             MaterialPageRoute(
               builder: (context) => CreateNotePage(),
             ),
           );
+          if (_newNote != null) {
+            _notes.add(_newNote);
+            setState(() {});
+          }
         },
         child: Icon(Icons.add),
       ),
       body: ListView.builder(
-        itemCount: notes.length,
+        itemCount: _notes.length,
         itemBuilder: (context, index) {
           return Card(
             child: ListTile(
-              title: Text(notes[index]),
+              title: Text(_notes[index]),
+              onTap: () {},
             ),
           );
         },
