@@ -40,7 +40,11 @@ class _HomePageState extends State<HomePage> {
                   arguments: _notes[index],
                 );
                 if (_newNote != null) {
-                  _notes[index] = _newNote as String;
+                  if (_newNote == '') {
+                    _notes.removeAt(index);
+                  } else {
+                    _notes[index] = _newNote as String;
+                  }
                   setState(() {});
                 }
               },

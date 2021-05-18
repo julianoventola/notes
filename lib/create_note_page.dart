@@ -35,7 +35,9 @@ class _CreateNotePageState extends State<CreateNotePage> {
             if (_isEdit)
               IconButton(
                 icon: Icon(Icons.delete),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context, '');
+                },
               )
           ]),
       body: Padding(
