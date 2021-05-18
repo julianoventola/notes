@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('NOTES'),
+        title: Text('Anotações'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {

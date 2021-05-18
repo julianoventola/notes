@@ -30,7 +30,7 @@ class _CreateNotePageState extends State<CreateNotePage> {
     return Scaffold(
       appBar: AppBar(
           centerTitle: true,
-          title: Text('${_isEdit ? 'Edit' : 'Create'} Note'),
+          title: Text('${_isEdit ? 'Editar' : 'Criar'} nota'),
           actions: [
             if (_isEdit)
               IconButton(
@@ -43,7 +43,7 @@ class _CreateNotePageState extends State<CreateNotePage> {
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
               controller: _inputController,
@@ -51,18 +51,25 @@ class _CreateNotePageState extends State<CreateNotePage> {
               maxLength: 400,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
+                labelText: 'Descrição',
               ),
               onChanged: (value) {
                 _description = value;
                 setState(() {});
               },
             ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.025,
+            ),
             if (_description.isNotEmpty)
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pop(context, _description);
-                },
-                child: Text('Salvar'),
+              Container(
+                width: 200,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context, _description);
+                  },
+                  child: Text('Salvar'),
+                ),
               ),
           ],
         ),

@@ -9,7 +9,8 @@ class AppWidget extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Notes',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.amber,
+        scaffoldBackgroundColor: Colors.grey.shade200,
       ),
       routes: {
         '/home': (context) => HomePage(),
