@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes/widgets/custom_widgets.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -13,10 +14,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text('Anotações'),
-      ),
+      appBar: CustomWidgets.createAppbar(title: 'Anotações'),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           var _newNote = await Navigator.pushNamed(context, '/create-note');

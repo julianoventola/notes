@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes/widgets/custom_widgets.dart';
 
 class CreateNotePage extends StatefulWidget {
   const CreateNotePage({Key? key}) : super(key: key);
@@ -28,18 +29,18 @@ class _CreateNotePageState extends State<CreateNotePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          centerTitle: true,
-          title: Text('${_isEdit ? 'Editar' : 'Criar'} nota'),
-          actions: [
-            if (_isEdit)
-              IconButton(
-                icon: Icon(Icons.delete),
-                onPressed: () {
-                  Navigator.pop(context, '');
-                },
-              )
-          ]),
+      appBar: CustomWidgets.createAppbar(
+        title: '${_isEdit ? 'Editar' : 'Criar'} nota',
+        actions: [
+          if (_isEdit)
+            IconButton(
+              icon: Icon(Icons.delete),
+              onPressed: () {
+                Navigator.pop(context, '');
+              },
+            )
+        ],
+      ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(
