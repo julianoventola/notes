@@ -1,16 +1,33 @@
-# notes
+# Notes App - [![Flutter](https://img.shields.io/badge/Flutter-dart-white?labelColor=blue&style=flat&link=https://flutter.dev/)](https://flutter.dev/)
 
-A new Flutter project.
+<h1 align="center">
+  <img width="427" src= "./logonotes.JPG">
+  <p>📝A simple Flutter App to take notes📝</p>
+  <img width="427" src= "./notes.gif">
+</h1>
+
+# Features
+
+- Main page showing all notes
+- Add page to add a new note
+- Edit page (clicking on note), to edit it
+- Edit page (clicking on note), to delete it
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+- Clone the repository
+- run in cmd:
+  ```cmd
+  flutter pub get
+  flutter run
+  ```
 
-A few resources to get you started if this is your first Flutter project:
+## Dependencieis
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+| Lib    | Link       |
+| ------ | ---------- |
+| no lib | [no lib]() |
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Device
+
+- Tested in Pixel 4 - Android 11
